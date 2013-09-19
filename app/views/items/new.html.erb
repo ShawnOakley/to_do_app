@@ -1,0 +1,33 @@
+<h2>Create Item Page</h2>
+
+<form action='<%= items_url %>' method='post'>
+
+  <label>Title of item
+
+    <input type='text'
+    name = 'item[title]'>
+  </label>
+  </br>
+  </br>
+  <label>Description of item
+    <textarea
+    name='item[description]'>Enter a description here...
+    </textarea>
+  </label>
+  </br>
+  </br>
+  <label>Which project does this belong to?
+    <select name='item[project_id]'>
+    <%Project.all.each do |project|%>
+    <option value="<%= project.id %>">
+      <%= project.title %>
+    </option>
+    <% end %>
+  </select>
+  </br>
+  </br>
+  <input type = 'submit' value="Create Item">
+
+</form>
+
+

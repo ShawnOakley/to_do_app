@@ -1,0 +1,18 @@
+<h2>Projects for <%= @team.name %></h2>
+
+<% @team.projects.each do |project| %>
+
+<ul>
+  <li>
+    <%= project.title %>
+    <% project.items.each do |item| %>
+    Items to do:
+    <ul>
+      <li>
+        <%= item.title %>
+      </li>
+    </ul>
+    <%end%>
+  </li>
+</ul>
+<%end%>

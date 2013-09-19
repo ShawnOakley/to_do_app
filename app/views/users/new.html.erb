@@ -1,0 +1,26 @@
+<h2>User Create Page</h2>
+
+<form action='<%= users_url %>' method='post' >
+
+  <label>User Name
+    <input
+    type='text'
+    name='user[name]'>
+  </label>
+</br>
+</br>
+  <label>Which teams would you like to join?
+    <% Team.all.each do |team| %>
+    <ul>
+      <li>
+    <label> <%=team.name%>
+    <input type='checkbox' name='team[<%=team.id%>]'>
+    </label>
+      </li>
+    </ul>
+    <% end %>
+  </label>
+
+<input type="submit" value="Create User">
+
+</form>

@@ -1,0 +1,17 @@
+Title: <%= @item.title%>
+
+</br>
+</br>
+
+Description: <%= @item.description %>
+
+</br>
+</br>
+
+Belongs to: <%= Project.find(@item.project_id).title%>
+
+</br>
+</br>
+
+<form method='get' action= '<%= project_url(@item.project_id)%>' >
+  <input type= 'submit' value= "Return to <%= Project.find(@item.project_id).title%>" >
