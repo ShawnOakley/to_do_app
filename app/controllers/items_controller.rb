@@ -17,4 +17,8 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
   end
+
+  def index
+    @project = Project.find(params[:project_id])
+  end
 end

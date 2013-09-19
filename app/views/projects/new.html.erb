@@ -1,0 +1,41 @@
+<h2>Create a new project for <%= @team.name %></h2>
+
+<form action='<%= team_projects_url(@team) %>' method='post'>
+  <label>Project Name:
+    </br>
+    <input
+    type='text'
+    name='project[title]'>
+  </label>
+</br>
+</br>
+  <label>Description of project:
+    </br>
+    <textarea
+    name='project[description]'>Enter a description here...
+    </textarea>
+  </label>
+</br>
+<h3>Add a task item for the project</h3>
+
+<label>Task item:
+</br>
+    <input type='text'
+    name = 'item[title]'>
+  </label>
+  </br>
+  </br>
+  <label>Description of item:
+    </br>
+    <textarea
+    name='item[description]'>Enter a description here...
+    </textarea>
+  </label>
+
+</br>
+</br>
+
+  <input type = 'submit', value='Submit new project'>
+
+</form>
+

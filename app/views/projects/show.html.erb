@@ -5,11 +5,19 @@
     Items to do:
     <ul>
       <li>
+        <%= link_to(item_url(item)) do%>
         <%= item.title %>
+        <% end %></br>
+
       </li>
+      <ul>
+        <li>
+          <%= (item.completed == false || item.completed == nil) ?  "Incomplete" : "Complete" %>
+        </li>
+      </ul>
     </ul>
     <%end%>
 
-    <form action='<%= team_url(@project.team_id) %>' methd='get'>
+    <form action='<%= team_url(@project.team_id) %>' method='get'>
       <input type='submit' value="Return to Team">
     </form>

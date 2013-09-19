@@ -1,0 +1,10 @@
+<h2>Items for <%= @project.title %></h2>
+<ul>
+<% @project.items.each do |item| %>
+<li>
+  <%= item.title %> : </br>
+  <%= item.description %>
+</li>
+</br>
+<%end%>
+</ul>

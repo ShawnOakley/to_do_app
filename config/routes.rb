@@ -1,9 +1,13 @@
 ToDoProject::Application.routes.draw do
 
   resources :users
-  resources :teams
-  resources :projects
-  resources :items
+  resources :teams do
+      resources :projects, :only => [:new, :create]
+    end
+  resources :projects, :except => [:new, :create] do
+    resources :items, :only => [:index]
+  end
+  resources :items, :except => [:index]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
